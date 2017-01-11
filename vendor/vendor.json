@@ -3,10 +3,12 @@
 	"ignore": "test",
 	"package": [
 		{
-			"checksumSHA1": "506eXGmFfB7mgzbMcsdT/UAXJgI=",
-			"path": "github.com/magiconair/properties",
-			"revision": "9c47895dc1ce54302908ab8a43385d1f5df2c11c",
-			"revisionTime": "2016-11-28T00:34:34Z"
+			"checksumSHA1": "LH4X/kevmgb7CQA53NcqKBzaA00=",
+			"path": "github.com/oconnormi/properties",
+			"revision": "688c939da3937df07f3a5e3ffb6e11690d370407",
+			"revisionTime": "2017-01-11T00:37:39Z",
+			"version": "fix_delete",
+			"versionExact": "fix_delete"
 		},
 		{
 			"checksumSHA1": "LMu1NsthSqcXfKu0m6YGPAmwBcY=",

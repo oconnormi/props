@@ -5,7 +5,7 @@ import (
   "fmt"
 
   "github.com/urfave/cli"
-  "github.com/magiconair/properties"
+  "github.com/oconnormi/properties"
 
   "github.com/oconnormi/props/version"
 )
@@ -54,7 +54,32 @@ func main() {
         if e != nil {
       		return cli.NewExitError("could not write file", 3)
       	}
+        fo.Close()
         return nil
+      },
+    },
+    {
+      Name:     "del",
+      Aliases:  []string{"d"},
+      Usage:    "deletes a property",
+      Action:   func (c *cli.Context) error {
+        key := c.Args().Get(0)
+        path := c.Args().Get(1)
+
+        p := properties.MustLoadFile(path, properties.UTF8)
+
+        p.Delete(key)
+
+        fo, err := os.Create(path)
+        if err != nil {
+      		return cli.NewExitError("could not create file", 2)
+      	}
+        _, e := p.WriteComment(fo, "#", properties.UTF8)
+        if e != nil {
+      		return cli.NewExitError("could not write file", 3)
+      	}
+        fo.Close()
+        return  nil
       },
     },
   }
